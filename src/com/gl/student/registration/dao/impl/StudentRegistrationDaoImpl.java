@@ -60,4 +60,57 @@ public class StudentRegistrationDaoImpl implements StudentRegistrationDao{
 
 		return students;
 	}
+
+	@Override
+	public List<Student> searchBy(String name, String department) {
+		// TODO Auto-generated method stub
+		Transaction tx = session.beginTransaction();
+		String query="";
+		if(name.length()!=0 && department.length()!=0)
+			query ="from Student where name like '%"+name+"%' or department like '%"+department+"%'";
+		else if(name.length()!=0)
+			query ="from Student where name like '%"+name+"%'";
+		else if(department.length()!=0)
+			query ="from Student where department like '%"+department+"%'";
+		else
+			System.out.println("Cannot search without input data");
+
+
+		List<Student> students=session.createQuery(query).list();
+
+		tx.commit();
+
+
+		return students;
+	}
+
+	@Override
+	public Student findById(int id) {
+		// TODO Auto-generated method stub
+
+		Student student = new Student();
+		Transaction tx = session.beginTransaction();
+
+		// find record with Id from the database table
+		student = session.get(Student.class, id);
+
+		tx.commit();
+
+
+		return student;
+	}
+
+	@Override
+	public void deleteById(int studentId) {
+		// TODO Auto-generated method stub
+		Transaction tx = session.beginTransaction();
+
+		// get transaction
+		Student student = session.get(Student.class, studentId);
+
+		// delete record
+		session.delete(student);
+
+		tx.commit();
+	}
 }

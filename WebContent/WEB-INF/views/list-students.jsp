@@ -27,14 +27,14 @@
 
 		<!-- Add a search form -->
 
-		<form action="/LibraryManagement/books/search" class="form-inline">
+		<form action="/StudentRegistrationManagement/student/search" class="form-inline">
 
 			<!-- Add a button -->
 			<a href="/StudentRegistrationManagement/student/showFormForAdd"
 				class="btn btn-primary btn-sm mb-3"> Register Student </a> <input
 				type="search" name="name" placeholder="Name"
 				class="form-control-sm ml-5 mr-2 mb-3" /> <input type="search"
-				name="author" placeholder="Author" class="form-control-sm mr-2 mb-3" />
+				name="department" placeholder="Department" class="form-control-sm mr-2 mb-3" />
 
 			<button type="submit" class="btn btn-success btn-sm mb-3">Search</button>
 
@@ -58,10 +58,10 @@
 						<td><c:out value="${student.country}" /></td>
 						<td>
 							<!-- Add "update" button/link --> <a
-							href="/LibraryManagement/books/showFormForUpdate?bookId=${student.studentId}"
+							href="/StudentRegistrationManagement/student/showFormForUpdate?studentId=${student.studentId}"
 							class="btn btn-info btn-sm"> Update </a> <!-- Add "delete" button/link -->
 							<a
-							href="/LibraryManagement/books/delete?bookId=${student.studentId}"
+							href="/StudentRegistrationManagement/student/delete?studentId=${student.studentId}"
 							class="btn btn-danger btn-sm"
 							onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">
 								Delete </a>

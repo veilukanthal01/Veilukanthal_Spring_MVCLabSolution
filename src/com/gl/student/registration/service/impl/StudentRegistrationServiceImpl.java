@@ -30,6 +30,25 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
 		// TODO Auto-generated method stub
 		return studentRegistrationDao.finAll();
 	}
+
+	@Override
+	public List<Student> searchBy(String name, String department) {
+		// TODO Auto-generated method stub
+		return studentRegistrationDao.searchBy(name, department);
+	}
+
+	@Override
+	public Student findById(int id) {
+		// TODO Auto-generated method stub
+		return studentRegistrationDao.findById(id);
+	}
+
+	@Override
+	public void deleteById(int studentId) {
+		// TODO Auto-generated method stub
+		studentRegistrationDao.deleteById(studentId);
+		
+	}
 	
 
 }

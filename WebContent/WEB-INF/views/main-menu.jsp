@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h2>Welcome to Student Registration System</h2>
-	<a href="student/showFormForAdd">Student Form</a>
+	<a href="/StudentRegistrationManagement/student/showFormForAdd">Student Form</a>
 </body>
 </html>
